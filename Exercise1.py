@@ -7,9 +7,14 @@
 #  Add on to the previous program by asking the user for another number and
 #  printing out that many copies of the previous message. (Hint: order of operations exists in Python)
 #  Print out that many copies of the previous message on separate lines. (Hint: the string "\n is the same as pressing the ENTER button)
+#
+#  Self-setup Aims:
+#  Capture errors which happens when wrong information is typed.
+#  Let the users type again without resetting the programme after an error is captured
+#  charset = utf-8
 
 import datetime
-while True:
+while True:  #Infinite loop until a success run
   try:
     name = input("What is your name? ")
     if not name.isalpha():
@@ -18,7 +23,6 @@ while True:
     if age < 0:
       raise ValueError
     result = str(datetime.date.today().year + 100 - age)
-#Extra work
     multiply = int(input("How many times you want to copy the following conversation?\n(Enter 1 to skip) "))
     msg = "Your 100th birthday would be celebrated on " + result + "if you are " + str(age) + " by now, " + name + ".\n"
     print((msg)*multiply)
